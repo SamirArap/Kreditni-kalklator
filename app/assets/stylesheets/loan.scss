@@ -1,0 +1,136 @@
+// Place all the styles related to the Loan controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+@import "bootstrap";
+
+body {
+	background: #E8E8E8;
+}
+
+footer {
+	//position: fixed;
+	bottom: 0px;
+	width: 100%;
+	height: 50px;
+	padding: 10px;
+	background: #3852BD;
+	color: #fff;
+	text-align: center;
+	border-radius: 5px;
+}
+.neck {
+	background: #DFE1E0;
+	border-radius: 5px;
+	padding: 7px;
+}
+.stomac {
+	margin-top: 7px;
+	width: 100%;
+	height: 80%;
+	//background: #3F6EFC;
+	background: #fff;
+	border-radius: 10px;
+	padding: 20px;
+	h2 {
+		color: #3852BD;
+		//color: #fff;
+		text-transform: uppercase;
+		font-weight: bold;
+		font-size: 3em;
+	}
+
+	h4 {
+		color: #3852BD;
+		//color: #FF8E32;
+		text-transform: uppercase;
+		font-weight: bold;
+		font-size: 2em;
+	}
+
+	h5 {
+		//color: #3F6EFC;
+		color: #3852BD;
+		text-transform: uppercase;
+		font-weight: bold;
+		font-size: 1.2em;
+	}
+
+}
+
+.header {
+	width: 100%;
+	height: 20%;
+	background: #9BCFF9;
+	font-weight: bold;
+	border-radius: 5px;
+	padding: 10px;
+}
+
+.boxes {
+	width: 100%;
+	height: 570px;
+	border-radius: 10px;
+	border-color: #9BCFF9;
+	padding: 10px;
+	.box {
+		width: 50%;
+		height: 550px;
+		border-style: solid;
+		border-color: #9BCFF9;
+		border-radius: 10px;
+		padding: 10px;
+		float: left;
+	}
+}
+.col-md-2 {
+	//color: #FF6301;
+	color: #3852BD;
+	text-transform: uppercase;
+	text-align: center;
+	//font-weight: bold;
+	font-size: 1.2em;
+}
+.col-md-3 {
+	//color: #FF6301;
+	color: #3852BD;
+	//font-weight: bold;
+	font-size: 1.2em;
+	}
+
+.col-md-4 {
+	color: #9BCFF9;
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 1.2em;
+	}
+.col-md-6 {
+	color: #9BCFF9;
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 1.2em;
+} 
+
+.col-md-8 {
+	color: #FF6301;
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 2.2em;
+}
+
+.col-md-12 {
+	//color: #FF6301;
+	color: #3852BD;
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 1.6em;
+}
+.list_line_even {
+    background: #E8F6FD;
+    border-radius: 5px;
+}
+.list_line_odd {
+    background: #fff;
+    border-radius: 5px;
+}
