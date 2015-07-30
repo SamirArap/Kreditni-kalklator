@@ -1,6 +1,7 @@
 class LoanController < ApplicationController
 
-  def index 	
+  def index 
+
   end
 
   def kredit
@@ -40,5 +41,7 @@ class LoanController < ApplicationController
   	@loan.mjesecna_rata = session[:formula1].to_f / session[:formula2].to_f
   	@loan.ukupno_vracate = @loan.mjesecna_rata * @loan.mjeseci_zivota
   	@loan.ukupno_kamate = (@loan.mjesecna_rata * @loan.mjeseci_zivota)-@loan.glavnica
+
+    
   end	  
 end

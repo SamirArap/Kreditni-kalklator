@@ -15,7 +15,7 @@
 					<br>
 					<div class="row">
 						<div class="col-md-6">Iznos trazenog kredita: </div>
-						<div class="col-md-6"><%=  number_to_currency(@loan.glavnica, unit: "BAM ", separator: ",", delimiter: ".") %> </div>
+						<div class="col-md-6"><%=  to_valuta(@loan.glavnica) %> </div>
 					</div>	
 					<div class="row">
 						<div class="col-md-6">Kamatna stopa: </div>
@@ -34,15 +34,15 @@
 					<br>
 					<div class="row">
 						<div class="col-md-6">Mjesecna rata: </div>
-						<div class="col-md-6"><%= number_to_currency(@loan.mjesecna_rata, unit: "BAM ", separator: ",", delimiter: ".")%></div>			
+						<div class="col-md-6"><%= to_valuta(@loan.mjesecna_rata)%></div>			
 					</div>	
 					<div class="row">	
 						<div class="col-md-6">Ukupno vracate: </div>
-						<div class="col-md-6"><%= number_to_currency(@loan.ukupno_vracate, unit: "BAM ", separator: ",", delimiter: ".")%></div>		
+						<div class="col-md-6"><%= to_valuta(@loan.ukupno_vracate)%></div>		
 					</div>
 					<div class="row">			
 						<div class="col-md-6">Ukupno kamate: </div>
-						<div class="col-md-6"><%= number_to_currency(@loan.ukupno_kamate, unit: "BAM ", separator: ",", delimiter: ".")%></div>		
+						<div class="col-md-6"><%= to_valuta(@loan.ukupno_kamate)%></div>		
 					</div>	
 				</div>
 				<div class="box">
@@ -54,7 +54,7 @@
 					<br>
 					<div class="row">
 						<div class="col-md-4"></div>
-						<div class="col-md-8"><%= number_to_currency(@loan.mjesecna_rata, unit: "BAM ", separator: ",", delimiter: ".")%></div>
+						<div class="col-md-8"><%= to_valuta(@loan.mjesecna_rata)%></div>
 					</div>
 
 					<!-- Pie Chart -->
@@ -104,8 +104,8 @@
 			<h4>Tabela otplate</h4>
 			<div class="row">
 				<div class="col-md-2">Isplata kredita</div>
-				<div class="col-md-6"><%=  number_to_currency(@loan.glavnica, unit: "BAM ", separator: ",", delimiter: ".") %></div>
-				<div class="col-md-4"><%= link_to("Print", {:action => 'index'}, :class => "btn btn-success btn-block")%></div>
+				<div class="col-md-6"><%=  to_valuta(@loan.glavnica) %></div>
+				<div class="col-md-4"><%= link_to("Print to PDF", {:action => 'index'}, :class => "btn btn-success btn-block")%></div>
 			</div>	
 			<br>
 			<div class="header">
@@ -130,18 +130,15 @@
 						<div class="col-md-2">				 <!-- otplata -->
 							<% @uplate_kamate = @ostalo * @loan.uplata_kamate%>
 							<% @otplata = (@loan.mjesecna_rata - @uplate_kamate)%>
-							<%= number_with_precision( @otplata, 
-										separator: ",", delimiter: ".", precision: 2)%>
+							<%= to_precision( @otplata)%>
 						</div>
 						<div class="col-md-2">				 <!-- uplata kamate -->
 							
-							<%= number_with_precision(@uplate_kamate, 
-										separator: ",", delimiter: ".", precision: 2 )%>
+							<%= to_precision(@uplate_kamate )%>
 						</div>
 						<div class="col-md-2">				 <!-- stanje kredita -->
 							<% @ostalo -= @otplata %>
-							<%= number_with_precision(@ostalo, 
-										separator: ",", delimiter: ".", precision: 2)%>
+							<%= to_precision(@ostalo)%>
 						</div>
 					</div>
 				</div>
